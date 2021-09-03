@@ -1,0 +1,27 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_image:
+    name: Build Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Build image
+        run: |
+          python3.9 build.py
+          docker image ls quay.io/ansible/ansible-buidler-test-container
