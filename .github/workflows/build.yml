@@ -24,5 +24,5 @@ jobs:
       - name: Build image
         run: |
           python build.py
-          docker image ls quay.io/ansible/ansible-buidler-test-container
-          docker history quay.io/ansible/ansible-buidler-test-container
+          docker image ls quay.io/ansible/ansible-builder-test-container
+          docker history quay.io/ansible/ansible-builder-test-container
